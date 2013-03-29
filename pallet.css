@@ -1,0 +1,102 @@
+/* colorPallet */
+#palletBase{
+  clear: both;
+  width: 230px;
+  margin-left: 10px;
+  margin-bottom: 45px;
+}
+.colorPallet{
+  border-top:1px solid #333;
+  border-left:1px solid #333;
+  width:20px;
+  height:20px;
+  float:left;
+  cursor:pointer;
+}
+
+#picker{
+  border :1px solid #666666;
+  width:40px;
+  height: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 0px;
+}
+
+#brushSizeNum{
+  margin-top: 2px;
+}
+
+#drawtype{
+margin-top:50px;
+}
+
+/*weight Slider*/
+
+    #brushsize {
+        float: left;
+        width: 120px;
+        margin: 8px;
+	margin-left: 20px;
+    }
+
+    #brush{
+        float: none;
+	margin-left:20px;
+	margin-top: -56px;
+	margin-bottom:0px;
+	border :1px solid #666666;
+    }
+
+h5{
+color: #666666;
+font-size:12px;
+        font-weight: normal;
+margin-bottom: -2px;
+}
+
+/*RGB Slider*/
+
+    h4.toolHeader{
+	width: 296px;
+        background-color: #999999;
+	color: #ffffff;
+        font-size:14px;
+        font-weight: normal;
+        padding-left:6px;
+	margin-top: 10px;
+	cursor:pointer;
+}
+
+    .tool{
+	width: 280px;
+	clear: both;
+	float:none;
+	padding-top: 8px;
+	padding: 10px;
+	border :1px solid #999999;;
+	margin-bottom: 10px;
+    }
+
+    #red, #green, #blue {
+        float: left;
+        clear: left;
+        width: 120px;
+        margin: 8px;
+	margin-left: 20px;
+	margin-right: 20px;
+    }
+    #swatch {
+        width: 80px;
+        height: 80px;
+        margin-top: 4px;
+        margin-left: 160px;
+	margin-bottom:20px;
+        background-image: none;
+    }
+    #red .ui-slider-range { background: #ef2929; }
+    #red .ui-slider-handle { border-color: #ef2929; }
+    #green .ui-slider-range { background: #8ae234; }
+    #green .ui-slider-handle { border-color: #8ae234; }
+    #blue .ui-slider-range { background: #729fcf; }
+    #blue .ui-slider-handle { border-color: #729fcf; }

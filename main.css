@@ -1,0 +1,120 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	overflow-x : hidden;
+	overflow-y : auto;
+	background-color: #333333;
+}
+#main{
+	width:1225px;
+	height:600px;
+	border:0px #333333 solid;
+}
+
+#brush {background:#fff; border:1px solid #000; float:left; margin:5px; }
+
+#brushSizeNum{
+	width: 40px;
+}
+
+#sliderBase{
+	font-size:12px;
+}
+
+#colorPicker {background:#fff; border:1px solid #000; float:left; margin:5px; width:100px;
+}
+
+/* colorPickerÇÃéqóvëfÇÃê›íË */
+#colorPicker div {border:1px solid #000; margin:5px; cursor:pointer;
+}
+
+#red {background:#c00;}
+#green {background:#0c0;}
+#blue {background:#00c;}
+
+
+
+
+
+#canvas01{
+	position: absolute;
+	width: 800px;
+	background-color:#FFFFFF;
+	z-index:1;
+	cursor: crosshair;
+}
+#pasteImage{
+	position:absolute;
+	z-index:5;
+}
+
+#panel{
+	width:425px;
+	height:584px;
+	border-left:1px #999999 solid;
+}
+.hidePanel{
+	position:fixed;
+	right:-250px;
+	top:0px;
+	z-index:7;
+}
+.showPanel{
+	position:absolute;
+	right:0px;
+	top:0px;
+	z-index:7;
+}
+
+/* Overlays */
+.ui-accordion .ui-accordion-header { display: block; cursor: pointer; position: relative; margin-top: -3px; padding: .5em .5em .5em .7em; zoom: 1; background-color: #000;}
+.ui-accordion .ui-accordion-icons { padding-left: 2.2em; }
+.ui-accordion .ui-accordion-noicons { padding-left: .7em; }
+.ui-accordion .ui-accordion-icons .ui-accordion-icons { padding-left: 2.2em; }
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon { position: absolute; left: .5em; top: 50%; margin-top: -8px;}
+.ui-accordion .ui-accordion-content { padding: 1em 2.2em; border-top: 0; overflow: auto; zoom: 1; }
+
+#cnvs{	
+position: absolute;
+	
+	width: 800;
+	top:0;
+	left:0;
+	border:0px #999999 solid;
+}
+
+#loadfile{
+	height:100px;
+}
+
+strong{
+	float:left;
+}
+#chooseEffect{
+}
+#choose{
+	width:120px;
+}
+
+#slider{
+	width:250px;
+	height:15px;
+	margin: 0 10px;
+	float:left;
+}
+
+#info{
+padding: 3px;
+font-size:13px;
+color: #CCCCCC;
+text-align: left;
+width:1225px;
+}
+
+.toolButton{
+	font-size:12px;
+	width:75px;
+}

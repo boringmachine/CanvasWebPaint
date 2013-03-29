@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Canvas</title>
+
+		<!-- Script -->
+		<script type="text/javascript" src="lib/md5.js"></script>
+
+		<!-- jquery -->
+		<link type="text/css" rel="stylesheet" href="lib/jquery-ui-1.9.0.custom.min.css"/>
+		<script type="text/javascript" src="lib/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="lib/jquery-ui-1.9.0.custom.min.js"></script>
+		<script type="text/javascript" src="lib/jquery.upload-1.0.2.min.js"></script>
+
+		<!-- ページの基本的な構造 -->
+		<link type="text/css" rel="stylesheet" href="main.css"/>
+		<script type="text/javascript" src="main.js"></script>
+
+		<!-- エフェクト機能 -->
+		<script type="text/javascript" src="jquery.cssFilterEffects-0.0.1.js"></script>
+		<script type="text/javascript" src="effects.js"></script>
+
+		<!-- ペイントの機能 -->
+		<script type="text/javascript" src="saveimage.js"></script>
+		<script type="text/javascript" src="loadimage.js"></script>
+		<link rel="stylesheet" href="pallet.css" type="text/css">
+		<script type="text/javascript" src="canvasCore.js"> </script>
+		<script type="text/javascript" src="undo.js"></script>
+		<script type="text/javascript" src="colorPallet.js"></script>
+		<script type="text/javascript" src="rgbSlider.js"></script>
+		<script type="text/javascript" src="keyBoard.js"></script>
+		<script type="text/javascript" src="spuit.js"></script>
+
+		<script type="text/javascript">
+			// ページ読み込み時に実行させる関数
+			window.onload=function(){
+				brush(); // ページ読み込み時に関数brush()を実行
+				createPallet();
+				createBackCanvas();
+
+			}
+
+		</script>
+	</head>
+	<body>
+	<div id="main">
+		<!-- ペイントをするキャンバス -->
+		<div id="cnvs" width="800" height="600" class="absol">
+			<span id="pasteImage"></span>
+			<canvas id="canvas01" width="800" height="600"
+				onmousemove="mMove(event.clientX, event.clientY)"
+				onmousedown="mDown(true)"
+				onmouseup="mDown(false)"
+				onmouseout="mDown(false)"></canvas>
+		</div>
+		
+		<script type="text/javascript">
+				createBackCanvas();
+				keyboardStandBy();
+		</script>
+		<!-- 操作パネル -->
+		<div id="panel" class="hidePanel">
+
+			<h3>Basic Tools</h3>
+			<div id="drawer">
+				<h4 class="toolHeader">ブラシの変更</h4>
+				<div id="sliderBase" class="tool">
+					<div id="brushsize"></div>
+					線の太さ<input id="brushSizeNum" type="number"></span>
+					<select id="drawtype">
+						<option value="5">自由線</option>
+						<option value="6">長方形</option>
+						<option value="7">円</option>
+						<option value="8">線</option>
+					</select>
+					<canvas id="brush" width="80" height="80"></canvas>
+				</div>
+				<h4 class="toolHeader">色の変更</h4>
+				<div id="sliderBase" class="tool">
+					<div id="red"></div>
+					<div id="green"></div>
+					<div id="blue"></div>
+					<div id="swatch" class="ui-widget-content ui-corner-all"></div>
+	 				<div id="palletBase"></div>
+				</div>
+				<h4 class="toolHeader">全消し・一つ戻す・やり直し</h4>
+				<div class="tool">
+					<div id="reset">全消し</div>
+					<div id="undo">一つ戻す</div>
+					<div id="redo">やり直し</div>
+				</div>
+			</div>
+			
+			<h3>Load Image</h3>
+			<div id="loadfile">
+				<span id="fileIt"></span>
+				<button id="savebutton">Paste</button>
+			</div>
+			
+			<h3>Effects</h3>
+			<div id="effects" class="effects">
+				<span id="choose">
+					<select id="chooseEffect">
+						<option id="chooseOption">Choose Effect</option>
+						<option value="saturate">saturate</option>
+						<option value="contrast">contrast</option>
+						<option value="brightness">brightness</option>
+						<option value="opacity">opacity</option>
+						<option value="grayscale">grayscale</option>
+						<option value="sepia">sepia</option>
+						<option value="invert">invert</option>
+						<option value="blur">blur</option>
+					</select>
+					<br /><br/>
+					<div id="slider"></div>
+					<button type="button" id="effectReset">Reset</button>
+					<button type="button" id="allEffectReset">AllReset</button>
+				</span>
+			</div>
+			
+			<h3>Download</h3>
+			<div id="download">
+				<button type="button" id="saveurl">Save</button>
+				<button type="button" id="removeurl">Remove</button>
+				<form action="download.php" method="POST">
+					<input id="imagedata" type="hidden" name="src" />
+					<input id="imageurl" type="submit" value="Download" />
+				</form>
+				<br /><br />
+				<select id="selectimage"></select>
+				<div id="savedimage"></div>
+			</div>
+		</div>
+	</div>
+	<div id="info">キャンバス上右クリックでスポイト　【ショートカット】Ctrl+Z：一つ戻す　Ctrl+X：やり直し　Del：全消し　P：鉛筆（自由線）　R：長方形　C：円　L：直線</div>
+	</body>
+</html>
