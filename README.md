@@ -1,9 +1,26 @@
 CanvasWebPaint
 =============
 
+概要
+-------------
+CanvasWebPaintは、HTML5のCanvasタグを用いて作成されたペイントプログラムです。
+
+機能
+-------------
+1.ペン・図形描画
+2.色・太さの変更
+3.undo,redo,clear
+4.パレット
+5.画像の読み込み・貼付け(サイズ変更可)
+6.エフェクト
+7.画像の保存・ダウンロード
+
+ライセンス
+-------------
+
     CanvasWebPaint
     The MIT License (MIT)
-    Copyright (c) 2012 Shun Sugiyama
+    Copyright (c) 2012 kcg.ac.jp
     http://github.com/boringmachine/CanvasWebPaint
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
