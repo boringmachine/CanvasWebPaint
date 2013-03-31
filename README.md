@@ -5,6 +5,10 @@ CanvasWebPaint
 -------------
 CanvasWebPaintは、HTML5のCanvasタグを用いて作成されたペイントプログラムです。
 
+サンプル
+-------------
+<http://users.kyoto-kcg.ac.jp/~st091039/paintdb/test10/Canvas.htm>
+
 機能
 -------------
 1. ペン・図形描画  
