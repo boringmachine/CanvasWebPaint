@@ -1,5 +1,4 @@
 $(function(){
-	//セレクタで選択されたエフェクトの種類を格納する変数。
 	var selectValue;
 	var effectOld ={
 			"saturate":100,
@@ -22,8 +21,7 @@ $(function(){
 			"blur":0
 	};
 	
-	//リセットボタンのクリックイベント。
-	//選択されたエフェクトをデフォルト値に設定。
+
 	$("#effectReset").click(function(){
 			var param = selectValue;
 			var value = effectDefault[param];
@@ -32,16 +30,14 @@ $(function(){
 			$("#slider").slider("value",value);
 	});
 
-	//オールリセットボタンのクリックイベント。
-	//すべてのエフェクトをデフォルト値に設定。
+
 	$("#allEffectReset").click(function(){
 		$('#canvas01').cssFilterEffects(effectDefault);
 		effectOld = $.extend(true,{},effectDefault); ;
 		$('#slider').slider("value",effectOld[selectValue]);
 	});
 
-	//エフェクトが選択されたときに発生するイベント。
-	//選択されたエフェクトのスライダーの範囲と値を決定する。
+
 	$("#chooseEffect").change(function(){
 		$("#chooseOption").hide();
 		selectValue = $("#chooseEffect > option:selected").val();
@@ -57,8 +53,7 @@ $(function(){
 		});
 	});
 		
-	//スライダーの設定。
-	//チェンジイベントで、キャンバスにエフェクトを適用する。
+
 	$('#slider').slider({
 		range:'min',
 		change:function(event,ui){
